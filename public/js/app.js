@@ -25,15 +25,34 @@ function getPic(){
 
     bodyContainer.appendChild(card);
 
-    var oneImg = document.createElement('img');
+
+     var oneImg = document.createElement('img');
     oneImg.src = redditData[i].data.url.split('gifv').join('gif').split('&amp;').join('&');
     oneImg.id = `image${i}`;
-    oneImg.style.maxHeight = '400px';
-    oneImg.style.maxWidth = '400px'; 
+    oneImg.className = "thisImage";
     card.appendChild(oneImg);
-    console.log('data' + this.data);
+
+    // var oneImg = document.createElement('div');
+    // oneImg.style.backgroundImage = 'url(' + redditData[i].data.url.split('gifv').join('gif').split('&amp;').join('&') + ')';
+    // oneImg.id = `image${i}`;
+    // oneImg.className = "thisImage";
+    // card.appendChild(oneImg);
+
+    var imageTitle = document.createElement('div');
+    imageTitle.className = 'title';
+    var titleName = document.createTextNode(redditData[i].data.title);
+    imageTitle.appendChild(titleName);
+    card.appendChild(imageTitle);
+
+    var author = document.createElement('div');
+    author.className = 'author';
+    var authorName = document.createTextNode(redditData[i].data.author);
+    author.appendChild(authorName);
+    card.appendChild(author);
+
     }
-    }
+
+  }
 
   
 }
