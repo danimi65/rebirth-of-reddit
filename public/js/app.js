@@ -1,5 +1,6 @@
 console.log('sanity check');
 
+
 // var mainStuff = document.getElementById('mainContainer');
 
 var redditData;
@@ -22,8 +23,13 @@ function getPic(){
     if(checkForTheGood(redditData[i].data.url)){
     var card = document.createElement('div');
     card.className = 'imgBox';
-
     bodyContainer.appendChild(card);
+
+    var linkPic = document.createElement('a');
+    linkPic.href = `http://www.reddit.com${redditData[i].data.permalink}`;
+    linkPic.className = "linkPic";
+    linkPic.appendChild(card);
+    bodyContainer.appendChild(linkPic);
 
 
      var oneImg = document.createElement('img');
@@ -32,23 +38,26 @@ function getPic(){
     oneImg.className = "thisImage";
     card.appendChild(oneImg);
 
-    // var oneImg = document.createElement('div');
-    // oneImg.style.backgroundImage = 'url(' + redditData[i].data.url.split('gifv').join('gif').split('&amp;').join('&') + ')';
-    // oneImg.id = `image${i}`;
-    // oneImg.className = "thisImage";
-    // card.appendChild(oneImg);
-
     var imageTitle = document.createElement('div');
     imageTitle.className = 'title';
-    var titleName = document.createTextNode(redditData[i].data.title);
-    imageTitle.appendChild(titleName);
+    var titleName = redditData[i].data.title;
+    imageTitle.innerHTML = titleName;
     card.appendChild(imageTitle);
 
     var author = document.createElement('div');
     author.className = 'author';
-    var authorName = document.createTextNode(redditData[i].data.author);
-    author.appendChild(authorName);
+    var authorName = redditData[i].data.author;
+    author.innerHTML = 'by ' + authorName;
     card.appendChild(author);
+
+    // var dateDiv = document.createElement('div');
+    // dateDiv.className = 'dateDiv';
+    // dateTime = moment.unix(redditData[i].data.created_utc);
+    // var today = new Date();
+    // var timeFromToday = document.createTextNode(dateTime.from(today));
+    // dateDiv.innerHTML = timeFromToday;
+    // card.appendChild(timeFromToday);
+    
 
     }
 

@@ -55,6 +55,10 @@ body {
   display: flex;
   justify-content: center; }
 
+.linkPic {
+  text-decoration: none;
+  color: inherit; }
+
 .imgBox {
   /* width: 100%; */
   background-color: white;
@@ -73,12 +77,47 @@ body {
     font-family: "Lato", serif;
     font-size: 20px;
     font-weight: bold; }
+  .imgBox .dateDiv {
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-family: "Lato", serif;
+    font-size: 20px;
+    font-weight: bold; }
   .imgBox .author {
     font-family: "Lato", serif; }
   .imgBox .thisImage {
     height: 350px;
     width: 350px;
     padding: 1rem; }
+
+.imgBox:hover {
+  border-style: solid;
+  border-color: #f1592a;
+  border-width: 8px; }
+
+footer {
+  background-color: #3a3a3c;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; }
+
+#instagram {
+  background: url("/assets/instagram_grey.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem; }
+
+#facebook {
+  background: url("/assets/facebook_grey.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem; }
+
+#instagram:hover {
+  background: url("/assets/instagram_orange.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem; }
 
 header {
   width: 100%;
@@ -109,6 +148,9 @@ header {
   color: #818285;
   padding: 1rem;
   text-align: center; }
+
+#random:hover, #board:hover, #app:hover {
+  color: #f1592a; }
 
 #circle {
   height: 2rem;

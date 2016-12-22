@@ -64,6 +64,12 @@ justify-content: center;
 
 }
 
+.linkPic {
+  text-decoration: none;
+  color: inherit;
+
+}
+
 
 .imgBox {
   /* width: 100%; */
@@ -75,8 +81,20 @@ justify-content: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+ 
+
 
   .title {
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-family: "Lato", serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .dateDiv {
     height: 10%;
     width: 100%;
     background-color: white;
@@ -99,7 +117,40 @@ justify-content: center;
   }
 }
 
-  
+.imgBox:hover {
+  border-style: solid;
+  border-color: rgb(241, 89, 42);
+  border-width: 8px;
+}
+
+footer {
+  background-color: rgb(58, 58, 60);
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+  #instagram{
+     background: url("/assets/instagram_grey.svg") no-repeat center;
+     height: 3rem;
+     width: 3rem;
+
+    }
+
+   #facebook {
+     background: url("/assets/facebook_grey.svg") no-repeat center;
+     height: 3rem;
+     width: 3rem;
+    
+
+    }
+
+    #instagram:hover{
+      background: url("/assets/instagram_orange.svg") no-repeat center;
+     height: 3rem;
+     width: 3rem;
+    }
 
 
   header {
@@ -137,8 +188,10 @@ justify-content: center;
     color: rgb(129, 130, 133);
     padding: 1rem;
     text-align: center;
-    
+  }
 
+  #random:hover, #board:hover, #app:hover{
+    color: rgb(241, 89, 42);
   }
 
   #circle { 
