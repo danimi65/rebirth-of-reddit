@@ -7,26 +7,33 @@ var bodyContainer = document.getElementById('mainContainer');
 // body.appendChild(bodyContainer);
 
 
+function checkForTheGood(picUrl){
+  var goodUrl = ['jpg', 'png', 'gif', 'jpeg', 'reddituploads'];
+  for(var i = 0; i < picUrl.length; i++){
+    if(picUrl.indexOf(goodUrl[i]) > -1){
+      return true;
+    }
+  }
+  return false;
+}
+
 function getPic(){
   for(var i = 0; i < redditData.length; i++){
+    if(checkForTheGood(redditData[i].data.url)){
     var card = document.createElement('div');
     card.className = 'imgBox';
-    //   card.addEventListener('click', (e) => {
-
-
-    // });
 
     bodyContainer.appendChild(card);
 
-
     var oneImg = document.createElement('img');
-    oneImg.src = redditData[i].data.url;
+    oneImg.src = redditData[i].data.url.split('gifv').join('gif').split('&amp;').join('&');
     oneImg.id = `image${i}`;
-    oneImg.style.maxHeight = '300px';
-    oneImg.style.maxWidth = '300px'; 
+    oneImg.style.maxHeight = '400px';
+    oneImg.style.maxWidth = '400px'; 
     card.appendChild(oneImg);
     console.log('data' + this.data);
-  }
+    }
+    }
 
   
 }
