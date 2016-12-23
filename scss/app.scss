@@ -1,66 +1,26 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+@import "./partials/reset";
+@import "./partials/clearfix";
+@import "./partials/general_styles";
 
 
 body {
-  background-image: url("/assets/bg.jpg");
-  background-repeat: repeat;
-  background-attachment: fixed;
-
+background: url("/assets/bg.jpg");
+background-repeat: repeat;
+background-attachment: fixed;
 }
+ 
 
 #mainContainer{
 flex-flow: row wrap;
 display: flex;
-// align-items: center;
 justify-content: center;
+box-sizing: border-box;
+width: 100%;
+
+@include respond-to('large'){
+padding-left: 250px;
+padding-right: 250px; 
+}
 
 }
 
@@ -71,18 +31,47 @@ justify-content: center;
 }
 
 
-.imgBox {
-  /* width: 100%; */
+  .imgBox {
   background-color: white;
   margin: 10px;
-  height: 500px;
-  width: 500px;
+  width: 350px;
   padding: 1rem;
   display: flex;
   flex-flow: row wrap;
+  box-sizing: border-box;
   justify-content: center;
- 
 
+  @include respond-to('medium'){
+  height: 400px;
+  width: 400px;
+
+  }
+
+  @include respond-to('large'){
+    height: 500px;
+    width: 500px;
+
+  }
+
+}
+
+ .thisImage {
+  height: 250px;
+  width: 250px;
+  padding: 1rem;
+
+  @include respond-to('medium'){
+  height: 210px;
+  width: 280px;
+  }
+
+  @include respond-to('large'){
+  height: 210px;
+  width: 280px;
+  }
+
+  
+  }
 
   .title {
     height: 10%;
@@ -90,32 +79,33 @@ justify-content: center;
     background-color: white;
     text-align: center;
     font-family: "Lato", serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-  }
 
-  .dateDiv {
-    height: 10%;
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    font-family: "Lato", serif;
+    @include respond-to('medium'){
     font-size: 20px;
-    font-weight: bold;
+    }
+
+    @include respond-to('large'){
+      font-size: 20px;
+    }
   }
 
-  .author {
-    font-family: "Lato", serif;
-
+  .infoStuff {
+  height: 10%;
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+  text-align: center;
+  font-family: "Lato", serif;
+  font-size: 12px;
+  color: grey;
   }
 
-  .thisImage {
-    height: 350px;
-    width: 350px;
-    padding: 1rem;
-  
-  }
-}
+ 
+
+
+ 
 
 .imgBox:hover {
   border-style: solid;
@@ -154,18 +144,60 @@ footer {
 
 
   header {
+  
+      width: 100%;
+      height: 4rem;
+      
+  }
+   
+  
+
+  #logoDiv{
     width: 100%;
-    height: 5rem;
+    height: 4rem;
+    background-color: white; 
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+      
+    @include respond-to('medium'){
     background: url("/assets/header_bg.svg") no-repeat center;
     background-color: white;
-  }
+    }
+
+    @include respond-to('large'){
+    background: url("/assets/header_bg.svg") no-repeat center;
+    background-color: white;
+    }   
+
+   }
+
 
   #logo {
-    width: 100%;
+    width: 50%;
+    height: 100%;
+    background: url("/assets/logo.svg") no-repeat;
+    margin-right: 150px;
+
+    @include respond-to('medium'){
+    // width: 100%;
     height: 100%;
     background: url("/assets/logo.svg") no-repeat center;
+    margin-left: 160px;
+    }
+
+    @include respond-to('large'){
+    // width: 100%;
+    height: 100%;
+    background: url("/assets/logo.svg") no-repeat center;
+    }
 
   }
+
+
+
 
   #navBar{
     flex-flow: row wrap;
@@ -176,60 +208,101 @@ footer {
     background-color: rgb(58, 58, 60);
     color: rgb(129, 130, 133);
     height: 3rem;
-    padding: 1rem;
     font-family: "Oswald", serif;
 
   }
 
-  #random{
+
+    #buttonDiv {
+    border: 2px rgb(241, 89, 42) solid;
+    background-color: white;
+    width: 2rem;
+    text-align: center;
+
+    @include respond-to('medium'){
+    margin: 15px;
+    }
+
+    @include respond-to('large'){
+    margin: 15px;
+    }
+
+    }
+
+    #button{
+    font-size: 30px;
+    color: #8B0000;
     height: 2rem;
+    }
+
+     #random{
     background-color: rgb(58, 58, 60);
     font-size: 20px;
     color: rgb(129, 130, 133);
     padding: 1rem;
     text-align: center;
-  }
+  
+    }
+
+    #circle {
+      display: none;
+
+      @include respond-to('medium'){
+      font-size: 20px;
+      background-color: rgb(58, 58, 60);
+      color: rgb(129, 130, 133);
+      padding: 1rem;
+      text-align: center;
+      }
+
+      @include respond-to('large'){ 
+        font-size: 20px;
+        background-color: rgb(58, 58, 60);
+        color: rgb(129, 130, 133);
+        padding: 1rem;
+        text-align: center;}
+      }
+
+    #circleTwo {
+      display: none;
+
+      @include respond-to('medium'){
+        font-size: 20px;
+        background-color: rgb(58, 58, 60);
+        color: rgb(129, 130, 133);
+        padding: 1rem;
+        text-align: center;
+      }
+      @include respond-to('large'){
+        font-size: 20px;
+        background-color: rgb(58, 58, 60);
+        color: rgb(129, 130, 133);
+        padding: 1rem;
+        text-align: center;
+      }
+    }
+
+    #board{
+    font-size: 20px;
+    background-color: rgb(58, 58, 60);
+    color: rgb(129, 130, 133);
+    padding: 1rem;
+    text-align: center;
+   }
+
+    #app {
+     font-size: 20px;
+    background-color: rgb(58, 58, 60);
+    color: rgb(129, 130, 133);
+    padding: 1rem;
+    text-align: center;
+    }
+
+    
+  
+  
 
   #random:hover, #board:hover, #app:hover{
     color: rgb(241, 89, 42);
   }
 
-  #circle { 
-    height: 2rem;
-    font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-  
-  }
-
-  #board{
-    height: 2rem;
-    font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-
-  }
-
-  #circleTwo { 
-    height: 2rem;
-     font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-  
-  }
-
-  #app {
-     height: 2rem;
-     font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-
-  }
