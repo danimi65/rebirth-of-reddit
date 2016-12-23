@@ -45,52 +45,100 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
 body {
-  background-image: url("/assets/bg.jpg");
+  background: url("/assets/bg.jpg");
   background-repeat: repeat;
   background-attachment: fixed; }
 
 #mainContainer {
   flex-flow: row wrap;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%; }
+  @media (min-width: 1200px) {
+    #mainContainer {
+      padding-left: 250px;
+      padding-right: 250px; } }
 
 .linkPic {
   text-decoration: none;
   color: inherit; }
 
 .imgBox {
-  /* width: 100%; */
   background-color: white;
   margin: 10px;
-  height: 500px;
-  width: 500px;
+  width: 350px;
   padding: 1rem;
   display: flex;
   flex-flow: row wrap;
+  box-sizing: border-box;
   justify-content: center; }
-  .imgBox .title {
-    height: 10%;
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    font-family: "Lato", serif;
-    font-size: 20px;
-    font-weight: bold; }
-  .imgBox .dateDiv {
-    height: 10%;
-    width: 100%;
-    background-color: white;
-    text-align: center;
-    font-family: "Lato", serif;
-    font-size: 20px;
-    font-weight: bold; }
-  .imgBox .author {
-    font-family: "Lato", serif; }
-  .imgBox .thisImage {
-    height: 350px;
-    width: 350px;
-    padding: 1rem; }
+  @media (min-width: 769px) {
+    .imgBox {
+      height: 400px;
+      width: 400px; } }
+  @media (min-width: 1200px) {
+    .imgBox {
+      height: 500px;
+      width: 500px; } }
+
+.thisImage {
+  height: 250px;
+  width: 250px;
+  padding: 1rem; }
+  @media (min-width: 769px) {
+    .thisImage {
+      height: 210px;
+      width: 280px; } }
+  @media (min-width: 1200px) {
+    .thisImage {
+      height: 210px;
+      width: 280px; } }
+
+.title {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  font-family: "Lato", serif;
+  font-size: 16px;
+  font-weight: bold; }
+  @media (min-width: 769px) {
+    .title {
+      font-size: 20px; } }
+  @media (min-width: 1200px) {
+    .title {
+      font-size: 20px; } }
+
+.infoStuff {
+  height: 10%;
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+  text-align: center;
+  font-family: "Lato", serif;
+  font-size: 12px;
+  color: grey; }
 
 .imgBox:hover {
   border-style: solid;
@@ -121,14 +169,40 @@ footer {
 
 header {
   width: 100%;
-  height: 5rem;
-  background: url("/assets/header_bg.svg") no-repeat center;
-  background-color: white; }
+  height: 4rem; }
+
+#logoDiv {
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center; }
+  @media (min-width: 769px) {
+    #logoDiv {
+      background: url("/assets/header_bg.svg") no-repeat center;
+      background-color: white; } }
+  @media (min-width: 1200px) {
+    #logoDiv {
+      background: url("/assets/header_bg.svg") no-repeat center;
+      background-color: white; } }
 
 #logo {
-  width: 100%;
+  width: 50%;
   height: 100%;
-  background: url("/assets/logo.svg") no-repeat center; }
+  background: url("/assets/logo.svg") no-repeat;
+  margin-right: 150px; }
+  @media (min-width: 769px) {
+    #logo {
+      height: 100%;
+      background: url("/assets/logo.svg") no-repeat center;
+      margin-left: 160px; } }
+  @media (min-width: 1200px) {
+    #logo {
+      height: 100%;
+      background: url("/assets/logo.svg") no-repeat center; } }
 
 #navBar {
   flex-flow: row wrap;
@@ -138,38 +212,67 @@ header {
   background-color: #3a3a3c;
   color: #818285;
   height: 3rem;
-  padding: 1rem;
   font-family: "Oswald", serif; }
 
+#buttonDiv {
+  border: 2px #f1592a solid;
+  background-color: white;
+  width: 2rem;
+  text-align: center; }
+  @media (min-width: 769px) {
+    #buttonDiv {
+      margin: 15px; } }
+  @media (min-width: 1200px) {
+    #buttonDiv {
+      margin: 15px; } }
+
+#button {
+  font-size: 30px;
+  color: #8B0000;
+  height: 2rem; }
+
 #random {
-  height: 2rem;
   background-color: #3a3a3c;
   font-size: 20px;
   color: #818285;
   padding: 1rem;
   text-align: center; }
-
-#random:hover, #board:hover, #app:hover {
-  color: #f1592a; }
 
 #circle {
-  height: 2rem;
-  font-size: 20px;
-  background-color: #3a3a3c;
-  color: #818285;
-  padding: 1rem;
-  text-align: center; }
-
-#board {
-  height: 2rem;
-  font-size: 20px;
-  background-color: #3a3a3c;
-  color: #818285;
-  padding: 1rem;
-  text-align: center; }
+  display: none; }
+  @media (min-width: 769px) {
+    #circle {
+      font-size: 20px;
+      background-color: #3a3a3c;
+      color: #818285;
+      padding: 1rem;
+      text-align: center; } }
+  @media (min-width: 1200px) {
+    #circle {
+      font-size: 20px;
+      background-color: #3a3a3c;
+      color: #818285;
+      padding: 1rem;
+      text-align: center; } }
 
 #circleTwo {
-  height: 2rem;
+  display: none; }
+  @media (min-width: 769px) {
+    #circleTwo {
+      font-size: 20px;
+      background-color: #3a3a3c;
+      color: #818285;
+      padding: 1rem;
+      text-align: center; } }
+  @media (min-width: 1200px) {
+    #circleTwo {
+      font-size: 20px;
+      background-color: #3a3a3c;
+      color: #818285;
+      padding: 1rem;
+      text-align: center; } }
+
+#board {
   font-size: 20px;
   background-color: #3a3a3c;
   color: #818285;
@@ -177,9 +280,11 @@ header {
   text-align: center; }
 
 #app {
-  height: 2rem;
   font-size: 20px;
   background-color: #3a3a3c;
   color: #818285;
   padding: 1rem;
   text-align: center; }
+
+#random:hover, #board:hover, #app:hover {
+  color: #f1592a; }

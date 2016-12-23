@@ -44,19 +44,15 @@ function getPic(){
     imageTitle.innerHTML = titleName;
     card.appendChild(imageTitle);
 
-    var author = document.createElement('div');
-    author.className = 'author';
     var authorName = redditData[i].data.author;
-    author.innerHTML = 'by ' + authorName;
-    card.appendChild(author);
+    var upLike = redditData[i].data.ups;
+    var dateTime = moment.unix(redditData[i].data.created_utc).fromNow();
 
-    // var dateDiv = document.createElement('div');
-    // dateDiv.className = 'dateDiv';
-    // dateTime = moment.unix(redditData[i].data.created_utc);
-    // var today = new Date();
-    // var timeFromToday = document.createTextNode(dateTime.from(today));
-    // dateDiv.innerHTML = timeFromToday;
-    // card.appendChild(timeFromToday);
+    var infoStuff = document.createElement('div');
+    infoStuff.className = "infoStuff";
+    infoStuff.innerHTML = `by ${authorName} &#9679 &#8593;${upLike} &#9679 ${dateTime}`;
+    card.appendChild(infoStuff);
+
     
 
     }
@@ -65,6 +61,26 @@ function getPic(){
 
   
 }
+
+
+// function getBoard (){
+//    var boardLink = document.getElementById('board');
+//   var boardName = document.createElement('a');
+//   boardName.href = `http://www.reddit.com${boardData}.data.permalink}`;
+//   boardName.appendChild(boardLink);
+//   bodyContainer.appendChild(boardName);
+// }
+
+// function boardRequest (){
+//  boardData = JSON.parse(this.responseText).data.children;
+//  getBoard();
+// }
+
+//   var boardReq = new XMLHttpRequest();
+//   boardReq.addEventListener('load', boardRequest);
+//   boardReq.open("GET","https://www.reddit.com/r/puppies.json"); 
+//   boardReq.send();
+
 
 
 function reqListener () {
