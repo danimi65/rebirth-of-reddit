@@ -10,6 +10,7 @@ background-attachment: fixed;
 }
  
 
+
 #mainContainer{
 flex-flow: row wrap;
 display: flex;
@@ -113,52 +114,47 @@ padding-right: 250px;
 
  
 
-.imgBox:hover {
+  .imgBox:hover {
   border-style: solid;
   border-color: rgb(241, 89, 42);
   border-width: 8px;
-}
+  }
 
-footer {
+  footer {
   background-color: rgb(58, 58, 60);
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-}
+  }
 
   #instagram{
-     background: url("/assets/instagram_grey.svg") no-repeat center;
-     height: 3rem;
-     width: 3rem;
+  background: url("/assets/instagram_grey.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem;
+  }
 
-    }
+  #facebook {
+  background: url("/assets/facebook_grey.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem;
+  }
 
-   #facebook {
-     background: url("/assets/facebook_grey.svg") no-repeat center;
-     height: 3rem;
-     width: 3rem;
-    
-
-    }
-
-    #instagram:hover{
-      background: url("/assets/instagram_orange.svg") no-repeat center;
-     height: 3rem;
-     width: 3rem;
-    }
+  #instagram:hover{
+  background: url("/assets/instagram_orange.svg") no-repeat center;
+  height: 3rem;
+  width: 3rem;
+  }
 
 
   header {
-  
-      width: 100%;
-      height: 4rem;
-      
+  width: 100%;
+  height: 4rem;
   }
    
   
 
-  #logoDiv{
+ #logoDiv{
     width: 100%;
     height: 4rem;
     background-color: white; 
@@ -191,7 +187,7 @@ footer {
     // width: 100%;
     height: 100%;
     background: url("/assets/logo.svg") no-repeat center;
-    margin-left: 200px;
+    margin-left: 230px;
     }
 
     @include respond-to('large'){
@@ -206,103 +202,104 @@ footer {
 
 
   #navBar{
-    flex-flow: row wrap;
-    display: flex;
-    // text-align: center;
-    justify-content: center;
-    width: 100%;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    height: 3rem;
-    font-family: "Oswald", serif;
-
+  flex-flow: row wrap;
+  display: flex;
+  // text-align: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  height: 3rem;
+  font-family: "Oswald", serif;
   }
 
 
-    #buttonDiv {
-    border: 2px rgb(241, 89, 42) solid;
-    background-color: white;
-    width: 2rem;
-    text-align: center;
+  #buttonDiv {
+  border: 2px rgb(241, 89, 42) solid;
+  background-color: white;
+  width: 2rem;
+  text-align: center;
 
-    @include respond-to('medium'){
-    margin: 15px;
-    }
+  @include respond-to('medium'){
+  margin: 15px;
+  width: 3rem;
+  }
 
-    @include respond-to('large'){
-    margin: 15px;
-    }
+  @include respond-to('large'){
+  margin: 15px;
+  width: 3rem;
+  }
 
-    }
+  }
 
-    #button{
-    font-size: 30px;
-    color: #8B0000;
-    height: 2rem;
-    }
+  #button{
+  font-size: 30px;
+  color: #8B0000;
+  height: 2rem;
+  }
 
-     #random{
-    background-color: rgb(58, 58, 60);
-    font-size: 20px;
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-  
-    }
+  #random{
+  background-color: rgb(58, 58, 60);
+  font-size: 20px;
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
 
-    #circle {
-      display: none;
+  #circle {
+  display: none;
 
-      @include respond-to('medium'){
-      font-size: 20px;
-      background-color: rgb(58, 58, 60);
-      color: rgb(129, 130, 133);
-      padding: 1rem;
-      text-align: center;
-      }
+  @include respond-to('medium'){
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
 
-      @include respond-to('large'){ 
-        font-size: 20px;
-        background-color: rgb(58, 58, 60);
-        color: rgb(129, 130, 133);
-        padding: 1rem;
-        text-align: center;}
-      }
+  @include respond-to('large'){ 
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;}
+  }
 
-    #circleTwo {
-      display: none;
+  #circleTwo {
+  display: none;
 
-      @include respond-to('medium'){
-        font-size: 20px;
-        background-color: rgb(58, 58, 60);
-        color: rgb(129, 130, 133);
-        padding: 1rem;
-        text-align: center;
-      }
-      @include respond-to('large'){
-        font-size: 20px;
-        background-color: rgb(58, 58, 60);
-        color: rgb(129, 130, 133);
-        padding: 1rem;
-        text-align: center;
-      }
-    }
+  @include respond-to('medium'){
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
+  @include respond-to('large'){
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
 
-    #board{
-    font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-   }
+  }
 
-    #app {
-     font-size: 20px;
-    background-color: rgb(58, 58, 60);
-    color: rgb(129, 130, 133);
-    padding: 1rem;
-    text-align: center;
-    }
+  #board{
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
+
+  #app {
+  font-size: 20px;
+  background-color: rgb(58, 58, 60);
+  color: rgb(129, 130, 133);
+  padding: 1rem;
+  text-align: center;
+  }
 
     
   
