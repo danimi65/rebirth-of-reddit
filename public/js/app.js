@@ -19,11 +19,16 @@ function checkForTheGood(picUrl){
 }
 
 function getPic(){
+
+  redditData = JSON.parse(this.responseText).data.children;
+  // console.log(redditData);
+
   for(var i = 0; i < redditData.length; i++){
     if(checkForTheGood(redditData[i].data.url)){
     var card = document.createElement('div');
     card.className = 'imgBox';
     bodyContainer.appendChild(card);
+
 
     var linkPic = document.createElement('a');
     linkPic.href = `http://www.reddit.com${redditData[i].data.permalink}`;
@@ -31,12 +36,12 @@ function getPic(){
     linkPic.appendChild(card);
     bodyContainer.appendChild(linkPic);
 
-
      var oneImg = document.createElement('img');
     oneImg.src = redditData[i].data.url.split('gifv').join('gif').split('&amp;').join('&');
     oneImg.id = `image${i}`;
     oneImg.className = "thisImage";
     card.appendChild(oneImg);
+
 
     var imageTitle = document.createElement('div');
     imageTitle.className = 'title';
@@ -53,8 +58,6 @@ function getPic(){
     infoStuff.innerHTML = `by ${authorName} &#9679 &#8593;${upLike} &#9679 ${dateTime}`;
     card.appendChild(infoStuff);
 
-    
-
     }
 
   }
@@ -63,37 +66,32 @@ function getPic(){
 }
 
 
-// function getBoard (){
-//    var boardLink = document.getElementById('board');
-//   var boardName = document.createElement('a');
-//   boardName.href = `http://www.reddit.com${boardData}.data.permalink}`;
-//   boardName.appendChild(boardLink);
-//   bodyContainer.appendChild(boardName);
-// }
+function dataRequest(url, listener){
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", getPic);
+oReq.open("GET", url); 
+oReq.send();
 
-// function boardRequest (){
-//  boardData = JSON.parse(this.responseText).data.children;
-//  getBoard();
-// }
+document.getElementById('mainContainer').innerHTML = "";
 
-//   var boardReq = new XMLHttpRequest();
-//   boardReq.addEventListener('load', boardRequest);
-//   boardReq.open("GET","https://www.reddit.com/r/puppies.json"); 
-//   boardReq.send();
-
-
-
-function reqListener () {
-
- redditData = JSON.parse(this.responseText).data.children;
-  console.log(redditData);
-  getPic();
 }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "https://www.reddit.com/r/redpandas.json"); 
-oReq.send();
+
+document.getElementById('board').addEventListener('click', () => {
+dataRequest("https://www.reddit.com/r/puppies.json", getPic);
+});
+
+document.getElementById('random').addEventListener('click', () => {
+dataRequest("https://www.reddit.com/r/foodPorn.json", getPic);
+});
+
+document.getElementById('app').addEventListener('click', () => {
+dataRequest("https://www.reddit.com/r/sunset.json", getPic);
+});
+
+
+
+dataRequest("https://www.reddit.com/r/redpandas.json", getPic);
 
 
 
