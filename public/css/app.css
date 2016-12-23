@@ -75,10 +75,14 @@ body {
   justify-content: center;
   box-sizing: border-box;
   width: 100%; }
+  @media (min-width: 669px) {
+    #mainContainer {
+      padding-left: 50px;
+      padding-right: 50px; } }
   @media (min-width: 1100px) {
     #mainContainer {
-      padding-left: 250px;
-      padding-right: 250px; } }
+      padding-left: 200px;
+      padding-right: 200px; } }
 
 .linkPic {
   text-decoration: none;

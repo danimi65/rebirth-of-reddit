@@ -19,13 +19,13 @@ box-sizing: border-box;
 width: 100%;
 
 @include respond-to('medium'){
-// padding-left: 100px;
-// padding-right: 100px; 
+padding-left: 50px;
+padding-right: 50px; 
 }
 
 @include respond-to('large'){
-padding-left: 250px;
-padding-right: 250px; 
+padding-left: 200px;
+padding-right: 200px; 
 }
 
 }
